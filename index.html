@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html class="no-js no-touch">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width" />
+  <title>BREEZY</title>
+  
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<meta property="og:site_name" content="BREEZY">
+<meta property="og:url" content="https://www.breezy.com.hk/">
+<meta property="og:title" content="breezy">
+<meta property="og:type" content="website">
+<meta property="og:description" content="breezy">
+<link href="soon.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body class="template-password">
+    <div class="content">
+        <img src="coming.jpg" alt="" />
+        <div class="clocks" id="countdown">
+            <div class="days">
+                <span>
+                    <span class="t1 tm" id="dayst1"></span>
+                    <span class="t2 day2 tm" id="dayst2"></span>
+                </span>
+                <span class="text">Days</span>
+            </div>
+            <div class="hrs">
+                <span>
+                    <span class="t1 tm" id="hrst1"></span>
+                    <span class="t2 tm" id="hrst2"></span>
+                </span>
+                <span class="text">Hours</span>
+            </div>
+            <div class="minus">
+                <span>
+                    <span class="t1 tm" id="minust1"></span>
+                    <span class="t2 tm" id="minust2"></span>
+                </span>
+                <span class="text">minutes</span>
+            </div>
+        </div>
+    </div>   
+    <script>
+        
+        function timer() {
+            var today = new Date();
+            var newDay = new Date(2020, 11, 12);
+            var upgradeTime = newDay.getTime() - today.getTime();
+            var seconds = upgradeTime;
+          var days        = Math.floor(seconds/1000/60/60/24);
+          var hoursLeft   = Math.floor((seconds) - (days*86400000));
+          var hours       = Math.floor(hoursLeft/3600000);
+          var minutesLeft = Math.floor((hoursLeft) - (hours*3600000));
+          var minutes     = Math.floor(minutesLeft/60000);
+    
+          if( days < 10){
+            document.getElementById('dayst1').innerHTML = 0 ;
+            document.getElementById('dayst2').innerHTML =  days;
+          }else {
+            document.getElementById('dayst1').innerHTML = days.toString().charAt(0) ;
+            document.getElementById('dayst2').innerHTML =  days.toString().charAt(1);
+          }
+          if( hours < 10){
+            document.getElementById('hrst1').innerHTML = 0 ;
+            document.getElementById('hrst2').innerHTML =  hours;
+          }else {
+            document.getElementById('hrst1').innerHTML = hours.toString().charAt(0) ;
+            document.getElementById('hrst2').innerHTML =  hours.toString().charAt(1);
+          }
+          if( minutes < 10){
+            document.getElementById('minust1').innerHTML = 0 ;
+            document.getElementById('minust2').innerHTML =  minutes;
+          }else {
+            document.getElementById('minust1').innerHTML = minutes.toString().charAt(0) ;
+            document.getElementById('minust2').innerHTML =  minutes.toString().charAt(1);
+          }
+        }
+        timer();
+        setInterval(function(){
+            timer()
+        }, 60000);
+    </script>
+</body>
+</html>
