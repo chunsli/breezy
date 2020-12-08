@@ -12,26 +12,46 @@ html {
     font-size: 100%;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 * {
     box-sizing: border-box;
 }
 
 .template-password {
-    background: url('bkg_soon.jpg') no-repeat center;
-    background-size: cover;
+   background: #fff;
     height: 100vh;
+}
+.logo {
+    text-align: center;
+    margin-top: 10%;
+}
+.content h1 {
+    font-weight: 300;
+    font-size: 130px;
+    color: #353535;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+    display: block;
+    white-space: nowrap;
+    line-height: 1;
+    margin-bottom: 20px;
 }
 .content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    overflow: hidden;
 }
 .clocks {
     display: flex;
     justify-content: center;
+}
+.clocks > div {
+    margin: 0 5px;
 }
 .clocks > div > span:not(.text) {
     display: flex;
@@ -40,45 +60,56 @@ html {
 }
 
 .clocks > div > span span {
-    margin: 0 10px;
+    margin: 0 5px;
     display: block;
 }
 .clocks .tm {
     display: block;
-    width: 128px;
-    height: 207px;
+    width: 70px;
+    height: 160px;
     color: #fff;
-    font-size: 145px;
-    font-weight: bold;
+    font-size: 100px;
+    line-height: 160px;
+    font-weight: 500;
     text-align: center;
-}
-.clocks .t1 {
-    background: url('BKG.jpg') no-repeat center;
+    background: url(BKG.jpg) no-repeat center;
     background-size: 100%;
-}
-.clocks .t2 {
-    background: url('BKG1.jpg') no-repeat center;
-    background-size: 100%;
+    font-family: 'Noto Sans', sans-serif;
 }
 .clocks .text {
     display: block;
     text-align: center;
     text-transform: uppercase;
-    color: #fff;
-    font-weight: bold;
+    color: #353535;
+    font-weight: 300;
     font-size: 20px;
     margin-top: 20px;
+
 } 
 @media (max-width: 900px){
+    .logo {
+       margin-top: 40%;
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .content h1 {
+        font-size: 400%;
+        white-space: normal;
+    }
     .clocks .tm {
-        width: 40px;
-        height: 65px;
-        font-size: 40px;
+        width: 30px;
+        height: 56px;
+        font-size: 32px;
+        line-height: 56px;
     } 
     .clocks > div > span span {
         margin: 0 3px;
     } 
     .clocks .text {
-        font-size: 14px;
+        font-size: 12px;
     } 
+    .clocks > div {
+        margin: 0 2px;
+    }
 }
